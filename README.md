@@ -10,19 +10,9 @@ The following commands will move the missing fonts from the downloaded/cloned fo
 
 * Mint/Ubuntu/Debian/etc
     
-        ``` sudo mv -f *.* /usr/share/fonts/ ; sudo fc-cache -f -v ; cd
+        ``` sudo cp -f *.* /usr/share/fonts/ && sudo fc-cache -f -v
 
-* Arch/Manjaro/Antergos/etc
-    
-        ```sudo mv -f *.* /usr/share/fonts/ ; sudo fc-cache -f -v ; cd
-
-* Fedora/OpenMandriva/Mageia/etc
-    
-        ```sudo mv -f *.* /usr/share/fonts/ ; sudo fc-cache -f -v ; cd
-
-* Other Distros
-    
-        ```sudo mv -f *.* /usr/share/fonts/ ; sudo fc-cache -f -v ; cd
+* This should work (but have not been tested) on other distros.
     
 
 You're done! WPS Office should now load properly! Awesome!
