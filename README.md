@@ -15,12 +15,10 @@ The following commands will move the missing fonts from the downloaded/cloned fo
 * Arch/Manjaro/Antergos/etc
     
         ```sudo mv -f *.* /usr/share/fonts/ ; sudo fc-cache -f -v ; cd
-    ```
 
 * Fedora/OpenMandriva/Mageia/etc
     
         ```sudo mv -f *.* /usr/share/fonts/ ; sudo fc-cache -f -v ; cd
-    ```
 
 * Other Distros
     
