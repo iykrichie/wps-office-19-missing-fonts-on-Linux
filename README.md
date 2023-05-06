@@ -10,8 +10,7 @@ The following commands will move the missing fonts from the downloaded/cloned fo
 
 * Mint/Ubuntu/Debian/etc
     
-        ```sudo mv -f *.* /usr/share/fonts/ ; sudo fc-cache -f -v ; cd
-    ```
+        ``` sudo mv -f *.* /usr/share/fonts/ ; sudo fc-cache -f -v ; cd
 
 * Arch/Manjaro/Antergos/etc
     
