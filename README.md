@@ -19,34 +19,31 @@ cd wps-office-19-missing-fonts-on-Linux
 
 Or download the ZIP from GitHub (Code → Download ZIP), extract it, and open the extracted folder in a terminal.
 
-### Step 2 — Go into the fonts folder
+### Step 2 — Copy the fonts and refresh the cache
 
-The actual font files live inside the `special-wps-office-fonts` subfolder. Make sure you `cd` into **that** folder — not the repo root — before running the next command:
+Run:
 
 ```bash
-cd special-wps-office-fonts
-ls
+sudo cp -f *.ttf *.TTF /usr/local/share/fonts/
 ```
-
-You should see files like `mtextra.ttf`, `symbol.ttf`, `WEBDINGS.TTF`, `wingding.ttf`, `WINGDNG2.ttf`, `WINGDNG3.ttf`. If you don't see these, you're probably one directory level off — run `find . -iname "*.ttf"` from the repo root to locate them.
-
-### Step 3 — Copy the fonts and refresh the cache
-
-From inside `special-wps-office-fonts`, run:
-
+for a system-wide installation,
+#### OR
 ```bash
-sudo cp -f *.ttf *.TTF /usr/share/fonts/
+cp -f *.ttf *.TTF ~/.local/share/fonts
+```
+for a user-wide installation. Then, run:
+```bash
 sudo fc-cache -f -v
 ```
 
-This copies only the font files (not the whole folder or the README) into your system fonts directory, then rebuilds the font cache so the system recognizes them.
+This copies only the font files (not the whole folder or the README) into your locally-managed system fonts directory or into a user fonts directory, then rebuilds the font cache so the system recognizes them.
 
-### Step 4 — Restart WPS Office
+### Step 3 — Restart WPS Office
 
 Close and reopen WPS Office. Formula symbols and special characters should now render correctly.
 
 ## Notes
 
 - These instructions are for Linux. For other operating systems, refer to the [WPS Office documentation](https://www.wps.com/).
-- If you accidentally copy the *entire* repo folder into `/usr/share/fonts/` instead of just the font files, it will still work, but it's tidier to have only the `.ttf` files there. You can clean this up by moving the fonts up a level and removing the leftover folder/README.
+- If you accidentally copy the _entire_ repo folder into your preferred installation directory, it will still work, but it's tidier to have only fonts there. You can clean this up by moving the fonts up a level and removing the leftover folder/README.
 - If you're still having display issues after following these steps, please open an issue on this repo or contact WPS Office support.
